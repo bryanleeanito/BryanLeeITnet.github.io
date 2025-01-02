@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="images/BRY LEE.ico" type="image/x-icon">
+    <title>BryLeeIT</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'popins', sans-serif;
+}
+
+.splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    z-index: 200;
+    color: white;
+    text-align: center;
+    line-height: 90vh;
+}
+
+.splash.display-none {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    z-index: -10;
+    color: white;
+    text-align: center;
+    line-height: 90vh;
+}
+
+@keyframes fadeIn {
+    to{
+        opacity: 1;
+    }
+}
+
+.fade-in{
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7),rgba(4, 9, 30, 0.7)),url(images/BACKGROUND\ 3.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    width: 200px;
+}
+
+nav img:hover {
+    cursor: pointer;
+    
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #36f4f4;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+.text-box {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text-box h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 62px;
+}
+
+.text-box p {
+    font-family: 'Roboto', sans-serif;
+    margin: 10px 0 40px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    border: none;
+    background: #616363;
+    transition: 0.5s;
+}
+
+nav .fa {
+    display: none;
+}
+
+@media(max-width:700px) {
+    .text-box h1 {
+        font-size: 20px;
+    }
+    .text-box p {
+        font-size: 16px;
+    }
+
+    .nav-links ul li {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        background: blue;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+
+    nav .fa {
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .nav-links ul {
+        padding: 30px;
+    }
+}
+
+.Menjelaskan {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.Menjelaskan h1 {
+    font-size: 80px;
+    font-weight: 600;
+    color: #333;
+}
+
+.Menjelaskan .Mengenai {
+    font-weight: 600;
+    color: #929090;
+    font-size: 40px;
+    margin-top: 10px;
+    line-height: 22ox;
+    padding: 10px;
+}
+
+.Menjelaskan p {
+    font-weight: 600;
+    color: #000000;
+    font-size: 20px;
+    margin-top: 10px;
+    line-height: 22ox;
+    padding: 10px;
+}
+
+.row {
+    gap: 20px;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.Menjelaskan .Menjelaskan-col {
+    flex-basis: 31%;
+    background: #54e5ff;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    transition: 0.5s;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+
+h3 {
+    color: #000000;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.Menjelaskan .Menjelaskan-col img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+.Menjelaskan-col:hover {
+    box-shadow: 12px 15px 20px 0px rgba(0,0,0,0.6);
+    transform: translateY(-10px);
+}
+
+/* footer */
+
+.footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer h4 {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+@media(max-width:700px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
+
+
+/* masih ada lagi */
+
+</style>
+<body>
+    <div class="splash">
+        <h1 class="fade-in">Selamat Datang Di Website Saya</h1>
+    </div>
+
+    <section class="header">
+        <nav>
+            <a class="logoo" href="index.html"><img src="images/BryLeeITLOGONEW.png" alt="logo"></a>
+            <div class="nav-links" id="nav-Links">
+                <i class="fa fa-remove" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="sosmed.html">Sosmed</a></li>
+                    <li><a href="https://saweria.co/BryanLeeA">Donate Me :( (Buat upgrade) (Saweria)</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-reorder" onclick="showMenu()"></i>
+        </nav>
+
+<div class="text-box">
+    <h1>WELCOME TO BRYLEEIT WEBSITE</h1>
+    <p>
+        Web Ini masih dalam tahap pengembangan dan akan segera di update >_- <br>Stay Tune Comrade</br>
+    </p>
+    <a href="https://www.youtube.com/@BryanLeeIT" class="hero-btn">MY CHANNEL YOUTUBE :)</a>
+</div>
+
+    </section>
+     
+ <!--tanda Akan Menjelaskan -->
+  
+ <section class="Menjelaskan">
+    <h1>Membahas</h1>
+    <p class="Mengenai">Mengenai.......</p>
+
+    <div class="row">
+        <div class="Menjelaskan-col">
+            <h3>Software</h3>
+            <img src="images/1Software..png" alt="">
+            <p>Membahas Perangkat Lunak Seperti Apa itu Software, Apa itu Sistem Operasi (OS), Lalu pengenalan Software (Aplikasi), Apa Itu Virus / Malware Dan masih banyak lagi mengenai Software Lainnya</p>
+        </div>
+        <div class="Menjelaskan-col">
+            <h3>Hardware</h3>
+            <img src="images/2HardwareLogo.png" alt="">
+            <p>Membahas Perangkat Keras, Seperti membahas apa itu Perangkat Keras, Bagaimana cara kerjanya, macam macam perangkat keras termasuk Chip Chip dan masih banyak lagi mengenai Perangkat Keras Lainnya</p>
+        </div>
+        <div class="Menjelaskan-col">
+            <h3>Review</h3>
+            <img src="images/4ReviewLogo.png" alt="">
+            <p>Membahas Dan Me-Review Barang / Barang Unik / Laptop / HandPhone Dan masih banyak lagi</p>
+        </div>
+        <div class="Menjelaskan-col">
+            <h3>Tips And Trick</h3>
+            <img src="images/3TipsandTricklogo.png" alt="">
+            <p>Tips And Trick Mengenai, Cara Menginstall Windows atau OS lainnya, Tips cara merawat laptop, Tips yang harus dilakukan, Cara menginstall Hal Sesuatu seperti Aplikasi atau Cara mengatasi problematik, Tips cara menghindari Malware atau Hal yang berbahaya lainnya, Dan masih banyak lagi mengenai Tips And Trick</p>
+        </div>
+        <div class="Menjelaskan-col">
+            <h3>Gaming</h3>
+            <img src="images/gaming.png" alt="">
+            <p>Mungkin saya akan membuat konten gaming, tapi masih belum tau dikarenakan Device atau alat alat masih kurang mendukung dari segi Spesifikasi yang diperlukan untuk gaming lalu alat alat yang penting seperti mic dll jadi mungkin kapan kapan hehe </p>
+        </div>
+     </div>   
+ </section>
+
+ <!-- tanda  -->
+
+<!-- Footer Ahkirat -->
+
+<section class="footer">
+    <h4>Ahkir</h4>
+    <p>Terima Kasih telah mampir dan Terima Kasih sudah mendukung</p>
+    <p>© 2025 BryLeeIT. All Rights Reserved | Design by BryanLeeIT</p>
+</section>
+
+<!-- DANGER JS CODE -->
+<!-- JavaScript Untuk Tombol -->
+<script>
+    const splash = document.querySelector('.splash');
+
+document.addEventListener('DOMContentLoaded', (e) => {
+    setTimeout(() => {
+        splash.classList.add('display-none');
+    }, 2000);
+}) 
+    
+    var navLinks = document.getElementById("nav-Links");
+function showMenu(){
+    navLinks.style.right = "0";
+}
+function hideMenu(){
+    navLinks.style.right = "-200px";
+}
+
+</script>
+
+</body>
+</html>
